@@ -252,6 +252,7 @@ class Block extends BaseToken implements \IteratorAggregate, \ArrayAccess, \Coun
      * <p>
      * The return argument will be casted to boolean if non-boolean was returned.
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         if (!is_scalar($offset)) {
@@ -268,6 +269,7 @@ class Block extends BaseToken implements \IteratorAggregate, \ArrayAccess, \Coun
      * @return mixed Can return all argument types.
      * @throws InvalidArgumentException
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         if (!is_scalar($offset)) {
@@ -287,6 +289,7 @@ class Block extends BaseToken implements \IteratorAggregate, \ArrayAccess, \Coun
      * @param mixed $argument The argument to set.
      * @throws InvalidArgumentException
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $argument)
     {
         if (!is_null($offset) && !is_scalar($offset)) {
@@ -309,6 +312,7 @@ class Block extends BaseToken implements \IteratorAggregate, \ArrayAccess, \Coun
      * @param mixed $offset The offset to unset.
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         if (!is_scalar($offset)) {
@@ -323,6 +327,7 @@ class Block extends BaseToken implements \IteratorAggregate, \ArrayAccess, \Coun
      * @link http://php.net/manual/en/countable.count.php
      * @return int The custom count as an integer. The return argument is cast to an integer.
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->children);
@@ -335,6 +340,7 @@ class Block extends BaseToken implements \IteratorAggregate, \ArrayAccess, \Coun
      * @return mixed data which can be serialized by <b>json_encode</b>,
      * which is a argument of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     function jsonSerialize()
     {
         $array = [

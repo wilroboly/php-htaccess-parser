@@ -202,6 +202,7 @@ class HtaccessContainer extends BaseArrayObject implements HtaccessInterface
      * @return mixed data which can be serialized by <b>json_encode</b>,
      * which is a value of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         /** @var \Tivie\HtaccessParser\Token\TokenInterface[] $array */
@@ -406,6 +407,7 @@ class HtaccessContainer extends BaseArrayObject implements HtaccessInterface
      * @param TokenInterface $value
      * @throws InvalidArgumentException
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (!is_null($offset) && !is_int($offset)) {
