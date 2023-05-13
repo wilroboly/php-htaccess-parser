@@ -235,6 +235,7 @@ class Block extends BaseToken implements \IteratorAggregate, \ArrayAccess, \Coun
      * @return Traversable An instance of an object implementing <b>Iterator</b> or
      * <b>Traversable</b>
      */
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return new \ArrayIterator($this->children);
